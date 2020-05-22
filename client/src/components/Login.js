@@ -20,10 +20,7 @@ class Login extends React.Component {
 
   login = (e) => {
     e.preventDefault();
-    // make a POST request to the login endpoint
-    // _if_ the creds match what's in the database, the server will return a JSON web token
-    // set the token to localStorage (sessions)
-    // navigate the user to the "/protected" route
+
     axiosWithAuth()
       .post("/api/login", this.state.credentials)
       .then((res) => {
@@ -37,26 +34,28 @@ class Login extends React.Component {
   render() {
     return (
       <>
-        <div>
+        <div className="login-page">
           <h1>Welcome to the Bubble App!</h1>
-          <p>Build a login page here</p>
 
-          <form onSubmit={this.login}>
-            <input
-              type="text"
-              name="username"
-              value={this.state.credentials.username}
-              onChange={this.handleChange}
-              placeholder="username"
-            />
-
-            <input
-              type="password"
-              name="password"
-              value={this.state.credentials.password}
-              onChange={this.handleChange}
-              placeholder="password"
-            />
+          <form id="login-form" onSubmit={this.login}>
+            <label>
+              Username
+              <input
+                type="text"
+                name="username"
+                value={this.state.credentials.username}
+                onChange={this.handleChange}
+              />
+            </label>
+            <label>
+              Password
+              <input
+                type="password"
+                name="password"
+                value={this.state.credentials.password}
+                onChange={this.handleChange}
+              />
+            </label>
             <button>Log in</button>
           </form>
         </div>

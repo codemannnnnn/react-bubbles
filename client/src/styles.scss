@@ -97,3 +97,25 @@ form {
     margin-top: 16px;
   }
 }
+
+.login-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  padding: 10%;
+  box-shadow: 0px 0px 10px 0px black;
+  border-radius: 10px;
+  background: dodgerblue;
+  color: white;
+}
+
+#login-form {
+  margin: auto;
+  padding: 5%;
+
+  input {
+    border-radius: 8px;
+    width: 150px;
+  }
+}
